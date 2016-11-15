@@ -1,14 +1,16 @@
 import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
+import { RouterModule  }  from "@angular/router";
+
 import { AppComponent } from "./app.component";
-import { DemoComponent } from "./demo/demo.component";
-import { DemoDataService } from "./demo/demo-data.service";
+import { routes } from "./app.routes";
+import { HomeComponent }  from "./home/home.component";
 
 @NgModule({
   // Components, Pipes, Directive
   declarations: [
     AppComponent,
-    DemoComponent
+    HomeComponent
   ],
   // Entry Components
   entryComponents: [
@@ -16,11 +18,11 @@ import { DemoDataService } from "./demo/demo-data.service";
   ],
   // Providers
   providers: [
-    DemoDataService
   ],
   // Modules
   imports: [
-    BrowserModule
+    BrowserModule, 
+    RouterModule.forRoot(routes)
   ],
   // Main Component
   bootstrap: [ AppComponent ]
